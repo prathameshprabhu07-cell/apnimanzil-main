@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apni Manzil - One Solution For All Deliveries</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .gradient-bg { background: linear-gradient(135deg, #004bb3 0%, #002e6e 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm px-6 py-4 flex justify-between items-center">
+        <div class="flex flex-col">
+            <h1 class="text-2xl font-black italic text-blue-600 leading-none">APNI MANZIL</h1>
+            <span class="text-[8px] font-bold text-slate-400 tracking-tighter uppercase">One Solution For All Deliveries</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest text-slate-600 items-center">
+            <a href="#" class="text-blue-600 border-b-2 border-blue-600">Home</a>
+            <a href="#services" class="hover:text-blue-600">Services</a>
+            <a href="#" onclick="alert('Tracking ID taka')" class="hover:text-blue-600">Tracking</a>
+            <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all">Login</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white py-20 px-6 text-center">
+        <h2 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">Fastest Logistics Network</h2>
+        <p class="opacity-80 font-medium max-w-2xl mx-auto uppercase text-xs tracking-widest">Managing 29,000+ Pincodes with Real-time Tracking</p>
+    </header>
+
+    <!-- Quick Price Check -->
+    <div class="max-w-4xl mx-auto -mt-10 bg-white p-6 rounded-2xl shadow-2xl border border-slate-100 flex flex-col md:flex-row gap-4 items-center">
+        <div class="flex-1 w-full">
+            <label class="text-[10px] font-bold text-slate-400 uppercase ml-2">From Pincode</label>
+            <input type="text" id="fromPincode" placeholder="400001" class="w-full bg-slate-50 p-3 rounded-xl border border-slate-100 outline-none focus:ring-2 focus:ring-blue-500 font-bold">
+        </div>
+        <div class="flex-1 w-full">
+            <label class="text-[10px] font-bold text-slate-400 uppercase ml-2">To Pincode</label>
+            <input type="text" id="toPincode" placeholder="411001" class="w-full bg-slate-50 p-3 rounded-xl border border-slate-100 outline-none focus:ring-2 focus:ring-blue-500 font-bold">
+        </div>
+        <button onclick="checkRates()" class="bg-orange-500 text-white px-10 py-4 rounded-xl font-black uppercase text-xs tracking-widest hover:bg-orange-600 mt-4 md:mt-4">Check Rates</button>
+    </div>
+
+    <!-- Services Grid -->
+    <section id="services" class="max-w-6xl mx-auto p-12">
+        <div class="text-center mb-12">
+            <h3 class="text-xs font-black text-blue-600 uppercase tracking-[0.4em] mb-2">Our Services</h3>
+            <h2 class="text-3xl font-black text-slate-800">What are you shipping today?</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Service Card: Courier -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm text-center flex flex-col items-center card-hover">
+                <div class="bg-blue-50 text-blue-600 p-5 rounded-2xl mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
+                </div>
+                <h3 class="font-black text-slate-800 mb-2 uppercase text-sm">Courier Services</h3>
+                <p class="text-[11px] text-slate-400 mb-6">Lightweight parcels & documents delivery.</p>
+                <button onclick="openBooking('Courier Services')" class="w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase hover:bg-blue-600">Select</button>
+            </div>
+
+            <!-- Service Card: Transport -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm text-center flex flex-col items-center card-hover">
+                <div class="bg-orange-50 text-orange-600 p-5 rounded-2xl mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+                </div>
+                <h3 class="font-black text-slate-800 mb-2 uppercase text-sm">Packers & Movers</h3>
+                <p class="text-[11px] text-slate-400 mb-6">House shifting & heavy furniture transport.</p>
+                <button onclick="openBooking('Packers & Movers')" class="w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase hover:bg-blue-600">Select</button>
+            </div>
+
+            <!-- Service Card: International -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm text-center flex flex-col items-center card-hover">
+                <div class="bg-purple-50 text-purple-600 p-5 rounded-2xl mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h3 class="font-black text-slate-800 mb-2 uppercase text-sm">International</h3>
+                <p class="text-[11px] text-slate-400 mb-6">Global shipping via Air & Sea freight.</p>
+                <button onclick="openBooking('International Shipping')" class="w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase hover:bg-blue-600">Select</button>
+            </div>
+
+            <!-- Service Card: B2B -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm text-center flex flex-col items-center card-hover">
+                <div class="bg-emerald-50 text-emerald-600 p-5 rounded-2xl mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h3 class="font-black text-slate-800 mb-2 uppercase text-sm">Business MSME</h3>
+                <p class="text-[11px] text-slate-400 mb-6">Bulk shipping for small businesses.</p>
+                <button onclick="openBooking('Business MSME')" class="w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase hover:bg-blue-600">Select</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="hidden fixed inset-0 z-[100] bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-[2.5rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+            <div class="bg-blue-600 p-8 text-white flex justify-between items-center">
+                <div>
+                    <h3 id="modalTitle" class="text-xl font-black italic uppercase">Booking Form</h3>
+                    <p class="text-[10px] font-bold opacity-70 uppercase tracking-widest">Apni Manzil Express</p>
+                </div>
+                <button onclick="closeBooking()" class="text-white hover:rotate-90 transition-all">✕</button>
+            </div>
+            <form id="bookingForm" class="p-8 space-y-4">
+                <input type="hidden" id="serviceType">
+                <input required type="text" id="custName" placeholder="Tumche Naav (Full Name)" class="w-full p-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm outline-none focus:ring-2 focus:ring-blue-600">
+                <input required type="tel" id="custPhone" placeholder="Mobile Number" class="w-full p-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm outline-none focus:ring-2 focus:ring-blue-600">
+                <button type="submit" class="w-full py-5 bg-blue-600 text-white font-black rounded-2xl shadow-xl shadow-blue-100 uppercase tracking-widest text-[11px] mt-4">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-12 text-center">
+        <h4 class="text-2xl font-black italic text-slate-800">APNI MANZIL</h4>
+        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em] mt-2">© 2024 Logistics Excellence</p>
+    </footer>
+
+    <script>
+        function openBooking(service) {
+            document.getElementById('serviceType').value = service;
+            document.getElementById('modalTitle').innerText = service;
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function checkRates() {
+            const from = document.getElementById('fromPincode').value;
+            const to = document.getElementById('toPincode').value;
+            if(!from || !to) return alert("Pincode taka!");
+            alert(`Rates fetching for ${from} to ${to}... Standard: ₹150, Express: ₹280`);
+        }
+
+        // Form Submission to Backend
+        document.getElementById('bookingForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const data = {
+                name: document.getElementById('custName').value,
+                phone: document.getElementById('custPhone').value,
+                service: document.getElementById('serviceType').value
+            };
+
+            try {
+                const response = await fetch('/api/book', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                if(result.success) {
+                    alert("✅ Booking यशस्वी झाली! आमची टीम तुम्हाला संपर्क करेल.");
+                    closeBooking();
+                    e.target.reset();
+                }
+            } catch (err) {
+                alert("❌ Error: Server शी संपर्क होऊ शकला नाही.");
+            }
+        };
+    </script>
+</body>
+</html>
