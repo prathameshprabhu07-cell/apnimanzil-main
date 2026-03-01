@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apni Manzil - Packers & Movers Portal</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 350px; text-align: center; }
+        h2 { color: #1a73e8; margin-bottom: 20px; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #1a73e8; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background-color: #1557b0; }
+        .footer { margin-top: 15px; font-size: 14px; color: #666; }
+    </style>
+</head>
 <body>
-    <h1>Apni Manzil - Packers and Movers</h1>
-    <p>Website lavkarach suru hot ahe...</p>
+    <div class="container">
+        <h2>Apni Manzil</h2>
+        <p>व्हेंडर लॉगिन / नोंदणी</p>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="युझरनेम / मोबाईल नंबर" required>
+            <input type="password" name="password" placeholder="पासवर्ड" required>
+            <button type="submit">लॉगिन करा</button>
+        </form>
+        <div class="footer">
+            नवीन आहात? <a href="#">येथे नोंदणी करा</a>
+        </div>
+    </div>
 </body>
 </html>
